@@ -1,0 +1,23 @@
+{
+  "name": "inventory-application",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Jackan04/inventory-application#readme",
+  "bugs": {
+    "url": "https://github.com/Jackan04/inventory-application/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Jackan04/inventory-application.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Jacob Asker",
+    "url": "https://jacobasker.com"
+  },
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

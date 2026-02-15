@@ -22,10 +22,10 @@ async function category_create_post(req, res) {
   const { name } = req.body;
   try {
     await categoryQueries.addCategory(name);
-    res.redirect("/");
   } catch (error) {
     console.error(error);
     res.status(500);
+  } finally {
     res.redirect("/");
   }
 }
@@ -45,10 +45,10 @@ async function category_update_post(req, res) {
   const { name } = req.body;
   try {
     await categoryQueries.updateCategory(id, name);
-    res.redirect("/");
   } catch (error) {
     console.error(error);
     res.status(500);
+  } finally {
     res.redirect("/");
   }
 }
@@ -57,10 +57,10 @@ async function category_delete_post(req, res) {
   const { id } = req.params;
   try {
     await categoryQueries.deleteCategoryById(id);
-    res.redirect("/");
   } catch (error) {
     console.error(error);
     res.status(500);
+  } finally {
     res.redirect("/");
   }
 }

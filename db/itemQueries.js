@@ -55,11 +55,11 @@ class ItemQueries {
     }
   }
 
-  async updateItem(item) {
+  async updateItem(id, item) {
     try {
       const result = await pool.query(
         "UPDATE items SET name = $1, price=$2, category_id=$3 WHERE id=$4 RETURNING *",
-        [item.name, item.price, item.category_id, item.id],
+        [item.name, item.price, item.category_id, id],
       );
 
       const row = result.rows[0];

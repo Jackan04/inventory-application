@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import indexRoutes from "./routes/indexRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
+import itemRoutes from "./routes/itemRoutes.js";
 
 dotenv.config();
 const PORT = process.env.PORT;
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRoutes);
 app.use("/categories", categoryRoutes);
+app.use("/items", itemRoutes);
 
 app.listen(PORT, (error) => {
   if (error) {

@@ -6,8 +6,11 @@
       <%- include('../partials/headline.ejs') %> <%-
       include('../partials/header.ejs') %>
       <form action="create" method="post">
-        <label for="name">Category name</label>
-        <input type="text" name="name" required />
+        <label for="name" data-field>
+          Category name
+          <input type="text" name="name" required />
+        </label>
+
         <button type="submit">Create</button>
       </form>
     </div>

@@ -10,6 +10,7 @@
         <tr>
           <th scope="col">Item</th>
           <th scope="col">Price</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +18,12 @@
         <tr>
           <td><%= item.name %></td>
           <td><%= item.price %> kr</td>
+                 <td class="buttons">
+                    <a class="button small" href="/items/update/<%= item.id%>">Edit</a>
+                    <form action="/items/delete/<%= item.id %>" method="post">
+                        <button class="small" data-variant="danger" type="submit">Delete</button>
+                    </form>
+                </td>
         </tr>
       <% }) %>
       </tbody>

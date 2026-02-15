@@ -2,11 +2,13 @@
 <html lang="en">
   <%- include('../partials/head.ejs') %>
   <body>
-    <%- include('../partials/headline.ejs') %>
-    <form action="create" method="post">
-      <label for="name">Category name</label>
-      <input type="text" name="name" required />
-      <button class="btn default" type="submit">Create</button>
-    </form>
+    <div class="container">
+      <%- include('../partials/headline.ejs') %>
+      <form action="create" method="post">
+        <label for="name">Category name</label>
+        <input type="text" name="name" required />
+      </form>
+      <button type="submit">Create</button>
+    </div>
   </body>
 </html>

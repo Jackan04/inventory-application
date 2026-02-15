@@ -2,21 +2,34 @@
 <html lang="en">
 <%- include('partials/head.ejs') %>
 <body>
+    <div class="container">
     <%- include('partials/headline.ejs') %>
-    <ul>
-    <% categories.forEach(category => { %>
-        <li>
-            <a href="/categories/<%= category.id%>"><%= category.name %></a>
-            
-            <a class="btn default" href="/categories/update/<%= category.id%>">Edit</a>
-            
-            <form action="/categories/delete/<%= category.id %>" method="post">
-                <button class="btn danger" type="submit">Delete</button>
-            </form>
-        </li>
-      
-    <% }) %>
-    </ul>
+    <%- include('partials/header.ejs') %>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% categories.forEach(category => { %>
+            <tr>
+                <td>
+                    <a href="/categories/<%= category.id%>"><%= category.name %></a>
+                </td>
+                <td class="buttons">
+                    <a class="button small" href="/categories/update/<%= category.id%>">Edit</a>
+                    <form action="/categories/delete/<%= category.id %>" method="post">
+                        <button class="small" data-variant="danger" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+    </div>
+
 
 </body>
 </html>

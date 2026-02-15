@@ -2,11 +2,16 @@
 <html lang="en">
   <%- include('../partials/head.ejs') %>
   <body>
+    <div class="container">
     <%- include('../partials/headline.ejs') %>
     <form action="/categories/update/<%= id%>" method="post">
-      <label for="name">Category name</label>
-      <input type="text" name="name" value=<%= name %> required />
-      <button class="btn default" type="submit">Update</button>
+      <label for="name" data-field>
+        Category name
+        <input type="text" name="name" placeholder="Enter a category name" value=<%= name %>  required />
+      </label>
     </form>
+    <button class="btn default" type="submit">Update</button>
+    </div>
+
   </body>
 </html>

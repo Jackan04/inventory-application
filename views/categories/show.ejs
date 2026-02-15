@@ -2,15 +2,26 @@
 <html lang="en">
   <%- include('../partials/head.ejs') %>
   <body>
+    <div class="container">
       <%- include('../partials/headline.ejs') %>
-    <ul>
-    <% items.forEach(item => { %>
-        <li>
-            <%= item.name %>
-            <%= item.price %>
-        </li>
-    <% }) %>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% items.forEach(item => { %>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= item.price %></td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+    </div>
+
 
   </body>
 </html>

@@ -42,10 +42,10 @@ class CategoryQueries {
     return row;
   }
 
-  async updateCategory(category) {
+  async updateCategory(id, name) {
     const result = await pool.query(
       "UPDATE categories SET name = $1 WHERE id=$2 RETURNING *",
-      [category.name, category.id],
+      [name, id],
     );
     const row = result.rows[0];
 

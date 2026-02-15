@@ -29,4 +29,33 @@ async function category_create_post(req, res) {
   }
 }
 
-export default { category_show, category_create_get, category_create_post };
+async function category_update_get(req, res) {
+  const { id } = req.params;
+  const categoryToUpdate = await categoryQueries.getCategoryById(id);
+  res.render("categories/update", {
+    title: "Update Category",
+    id: id,
+    name: categoryToUpdate.name,
+  });
+}
+
+async function category_update_post(req, res) {
+  const { id } = req.params;
+  const { name } = req.body;
+  try {
+    await categoryQueries.updateCategory(id, name);
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    res.status(500);
+    res.redirect("/");
+  }
+}
+
+export default {
+  category_show,
+  category_create_get,
+  category_create_post,
+  category_update_get,
+  category_update_post,
+};

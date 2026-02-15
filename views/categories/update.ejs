@@ -3,7 +3,8 @@
   <%- include('../partials/head.ejs') %>
   <body>
     <div class="container">
-    <%- include('../partials/headline.ejs') %>
+      <%- include('../partials/headline.ejs') %>
+      <%- include('../partials/header.ejs') %>
     <form action="/categories/update/<%= id%>" method="post">
       <label for="name" data-field>
         Category name

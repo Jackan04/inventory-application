@@ -3,7 +3,8 @@
   <%- include('../partials/head.ejs') %>
   <body>
     <div class="container">
-      <%- include('../partials/headline.ejs') %>
+      <%- include('../partials/headline.ejs') %> <%-
+      include('../partials/header.ejs') %>
       <form action="create" method="post">
         <label for="name">Category name</label>
         <input type="text" name="name" required />

@@ -4,6 +4,7 @@
   <body>
     <div class="container">
       <%- include('../partials/headline.ejs') %>
+      <%- include('../partials/header.ejs') %>
     <table>
       <thead>
         <tr>
@@ -15,7 +16,7 @@
       <% items.forEach(item => { %>
         <tr>
           <td><%= item.name %></td>
-          <td><%= item.price %></td>
+          <td><%= item.price %> kr</td>
         </tr>
       <% }) %>
       </tbody>

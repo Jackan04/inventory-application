@@ -6,7 +6,13 @@
     <ul>
     <% categories.forEach(category => { %>
         <li>
-  <a href="/categories/<%= category.id%>"><%= category.name %></a>
+            <a href="/categories/<%= category.id%>"><%= category.name %></a>
+            
+            <a class="btn default" href="/categories/update/<%= category.id%>">Edit</a>
+            
+            <form action="/categories/delete/<%= category.id %>" method="post">
+                <button class="btn danger" type="submit">Delete</button>
+            </form>
         </li>
       
     <% }) %>

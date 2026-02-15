@@ -9,6 +9,8 @@ categoriesRoutes.post("/create", categoriesController.category_create_post);
 categoriesRoutes.get("/update/:id", categoriesController.category_update_get);
 categoriesRoutes.post("/update/:id", categoriesController.category_update_post);
 
+categoriesRoutes.post("/delete/:id", categoriesController.category_delete_post);
+
 categoriesRoutes.get("/:id", categoriesController.category_show);
 
 export default categoriesRoutes;

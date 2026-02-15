@@ -9,6 +9,7 @@ async function category_show(req, res) {
   res.render("categories/show", {
     title: category.name,
     category: category,
+    id: id,
     items: items,
   });
 }
@@ -52,10 +53,23 @@ async function category_update_post(req, res) {
   }
 }
 
+async function category_delete_post(req, res) {
+  const { id } = req.params;
+  try {
+    await categoryQueries.deleteCategoryById(id);
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    res.status(500);
+    res.redirect("/");
+  }
+}
+
 export default {
   category_show,
   category_create_get,
   category_create_post,
   category_update_get,
   category_update_post,
+  category_delete_post,
 };

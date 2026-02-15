@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/headline.ejs') %>
+
+    <% items.forEach(item => { %>
+        <li>
+            <%= item.name %>
+            <%= item.price %>
+        </li>
+    <% }) %>
+  </body>
+</html>

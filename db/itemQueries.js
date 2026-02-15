@@ -9,10 +9,22 @@ class ItemQueries {
   async getItemById(id) {
     const result = await pool.query("SELECT * FROM items WHERE id=$1", [id]);
 
-    if (!result.rows[0]) {
+    const row = result.rows[0];
+
+    if (!row) {
       throw new Error(`Item with id ${id} not found`);
     }
-    return result.rows[0];
+
+    return row;
+  }
+
+  async getItemsByCategoryId(category_id) {
+    const result = await pool.query(
+      "SELECT * FROM items WHERE category_id=$1",
+      [category_id],
+    );
+
+    return result.rows;
   }
 
   async addItem(item) {

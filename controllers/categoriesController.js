@@ -1,5 +1,6 @@
 import categoryQueries from "../db/categoryQueries.js";
 import itemQueries from "../db/itemQueries.js";
+import Category from "../models/category.js";
 
 async function category_show(req, res) {
   const { id } = req.params;
@@ -20,8 +21,9 @@ async function category_create_get(req, res) {
 
 async function category_create_post(req, res) {
   const { name } = req.body;
+  const category = new Category(name);
   try {
-    await categoryQueries.addCategory(name);
+    await categoryQueries.addCategory(category);
   } catch (error) {
     console.error(error);
     res.status(500);
@@ -35,16 +37,16 @@ async function category_update_get(req, res) {
   const categoryToUpdate = await categoryQueries.getCategoryById(id);
   res.render("categories/update", {
     title: "Update Category",
-    id: id,
-    name: categoryToUpdate.name,
+    category: categoryToUpdate,
   });
 }
 
 async function category_update_post(req, res) {
   const { id } = req.params;
   const { name } = req.body;
+  const category = new Category(name);
   try {
-    await categoryQueries.updateCategory(id, name);
+    await categoryQueries.updateCategory(id, category);
   } catch (error) {
     console.error(error);
     res.status(500);

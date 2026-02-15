@@ -19,10 +19,10 @@ class CategoryQueries {
     return row;
   }
 
-  async addCategory(name) {
+  async addCategory(category) {
     const result = await pool.query(
       "INSERT INTO categories (name) VALUES ($1) RETURNING *",
-      [name],
+      [category.name],
     );
     return result.rows[0];
   }
@@ -42,10 +42,10 @@ class CategoryQueries {
     return row;
   }
 
-  async updateCategory(id, name) {
+  async updateCategory(id, category) {
     const result = await pool.query(
       "UPDATE categories SET name = $1 WHERE id=$2 RETURNING *",
-      [name, id],
+      [category.name, id],
     );
     const row = result.rows[0];
 

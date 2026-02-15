@@ -4,10 +4,10 @@
   <body>
     <div class="container">
       <%- include('../partials/header.ejs') %>
-    <form action="/categories/update/<%= id%>" method="post">
+    <form action="/categories/update/<%= category.id%>" method="post">
       <label for="name" data-field>
         Name
-        <input type="text" name="name" id="name" placeholder="Enter a name for the category" value=<%= name %>  required />
+        <input type="text" name="name" id="name" placeholder="Enter a name for the category" value=<%= category.name %>  required />
       </label>
       <button class="btn default" type="submit">Update</button>
     </form>

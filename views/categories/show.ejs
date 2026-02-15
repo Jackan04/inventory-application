@@ -3,12 +3,14 @@
   <%- include('../partials/head.ejs') %>
   <body>
     <%- include('../partials/headline.ejs') %>
-
+    <ul>
     <% items.forEach(item => { %>
         <li>
             <%= item.name %>
             <%= item.price %>
         </li>
     <% }) %>
+    </ul>
+
   </body>
 </html>

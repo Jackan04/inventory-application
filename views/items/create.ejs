@@ -11,6 +11,7 @@
             placeholder="Enter a name for the item"
             type="text"
             name="name"
+            id="name"
             required
           />
         </label>
@@ -20,12 +21,13 @@
             placeholder="Enter a price for the item"
             type="number"
             name="price"
+            id="price"
             required
           />
         </label>
         <div data-field>
           <label for="category_id">Category</label>
-          <select name="category_id" required>
+          <select name="category_id" id="category_id" required>
             <option disabled value="">Select a category</option>
             <% categories.forEach(category => { %>
              <option value=<%= category.id %> ><%= category.name %></option>

@@ -18,7 +18,7 @@ class ItemQueries {
   async addItem(item) {
     const result = await pool.query(
       "INSERT INTO items (name, price, category_id) VALUES ($1, $2, $3) RETURNING *",
-      [item.name, item.price, item.categoryId],
+      [item.name, item.price, item.category_id],
     );
 
     return result.rows[0];
